@@ -1,31 +1,25 @@
- /*==================================================
+   /*==================================================
   	          Google Teffy Style
   ==================================================*/
   /*you have no idea how many times I have start this again*/
 
-  html, body{
-    position:fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    width: 100%;
-    height: 100%;
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      min-width: 100vw;
+      font-family: arial,sans-serif;
+      overflow: hidden;
     }
-    
-  body {
-    margin: 0px;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background: none repeat scroll 0 0 #fff;
-    color: #222;
-    text-decoration:none;
-    overflow: hidden;
-  }
-
-  header {
-    width: 100%;
-    position:absolute;
+    header {
+      position: absolute;
+      top: 15px;
+      left: 10px;
+      right: 0;
+      width: 100%;
+    }
   }
 
   ol ul {
@@ -39,7 +33,7 @@
     
   }
     .top-nav li {
-    display: inline-block;
+    display: inline-flex;
     padding: 8px;
     text-align: rigth;
     padding: 5px 10px 0px 0px;
@@ -69,7 +63,7 @@
     top:3px;
    
   }
-   #sign_in a {
+    #sign_in a {
       margin: 0 auto;
       font-weight: bold;
       text-align: center;
@@ -82,28 +76,29 @@
 
   }
 /*the cool shadow in the box when you select it*/
-      #sign_in:hover { 
-       box-shadow: 1px 1px 5px #999;
+    #sign_in:hover { 
+    box-shadow: 1px 1px 5px #999;
    }
 
   /*logo*/
    .logo {
-    text-align: center;
     display: block;
-    margin: 0 auto;
+    margin-top: 10.5%;
     clear: both;
-    padding-top: 112px;
     width:100%;
-    padding:142px 0 24px 0;
-    
+    padding:142px 0 20px 0;
   }
 
   /*Search box*/
-  #search {
+   .search {
+    -webkit-appearance: none;
   	width: 600px;
     margin: auto;
     border-radius: 22px;
-
+    display: block;
+    position: relative fixed;
+    padding:12px 0 20px 0;
+    
   }
   .search input {
     border: 1px solid #d9d9d9;
@@ -120,11 +115,16 @@
     font-size: 17px;
    
   }
+  .search-input:hover, .search-input:focus {
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    border-color: rgba(223,225,229,0);}
   /*search Buttons*/
 
   .button{
-    text-align: center;
-    border-radius: 2px; 
+    border-radius: 3px;
+    align-self: center;
+    flex-direction: row;
+    margin-top: 5%;
   } 
 
   #gsearch{
@@ -133,8 +133,11 @@
     height: 40px;
     color:#5F6368;
     background-color: #f2f2f2;
-    border:none;
+    border:1px solid #f2f2f2;
+    border-radius: 4px;
     }
+    
+    /*cool shade when selected*/
     #gsearch:hover {
       border-width: 1px;
       box-shadow: 0px 0px 2px gray;}
@@ -148,7 +151,7 @@
      border: 1px solid #f2f2f2;
      border-radius: 4px;
       }
-      
+       /*cool shade when selected*/
     #lucky:hover{
     border-width: 1px;
     box-shadow: 0px 0px 2px gray;
@@ -159,11 +162,12 @@
     #language {
     font: sans-serif 10px;
     height: 30px;
+    margin-bottom: 20.5%;
     }
        
     #language a {color:blue;
       }
-   
+   /*my current location*/
     #location{
     font-family:arial, san-serif;
     height:35px;
@@ -175,56 +179,60 @@
     
   }
   
-
-
-  #footer {  
-    bottom: 0;
-    position: absolute;    
-    display: inline-block;
-    vertical-align: bottom;
-  	width:100%;
-  	color: #f2f2f2;
-  	border: .5px  solid Gainsboro;
-    padding: 0px 5px;
-    height: 82px;
-    
+.mid{position: absolute;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+    min-height: 1220px;}
+footer {
+    border-top: 1px solid #dfe1e5;
+    background: #f2f2f2;
+    width: 100%;
+  }
+footer a {
+    color: #5f6368;
+    padding-left: 27px;
 
     }
-  hr
+hr
   { 
   border: .5px solid Gainsboro;
 }
-   #left ul li{
+
+#left ul li{
           float: left;
-          display: left;
-          padding: 0px 0px 0px 27px;
+          display: flex;
+          padding-top: 11px;
+          padding-bottom: 11px;
           vertical-align: bottom;
           list-style: none;
           
       }
       
     #left ul li a{
-      padding: 30px 8px;
       font-family: Arial;
       font-size: 14px;
       text-align: center;
-      position: scroll;
+      display:flex;
       color:grey;
+      align-items: center;
       }
       
       #right ul li{
           float: right;
-          display: right;
-          padding: 0px 0px 0px 27px;
+          display: flex;
           vertical-align: bottom;
           list-style: none;
-        
+           padding-top: 11px;
+            padding-bottom: 11px
       }
       
       #right ul li a{
           font-family: Arial;
           font-size: 14px;
-          color:gray;
-          text-align: center;
-          position: scroll;
+          color:grey;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+         
 }
